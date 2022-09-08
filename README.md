@@ -1,3 +1,3 @@
 # terraform-spotinst-ocean-network-client
 
-This is wip
+This is currently wip
