@@ -1,0 +1,12 @@
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
+
+module "ocean-network-client" {
+  source            = "../.."
+  image_pull_policy = "Always"
+  image_tag         = "1.0.0-8-lb_endpoint-d0ec127"
+}
+
