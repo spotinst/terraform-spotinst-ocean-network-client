@@ -13,7 +13,7 @@ variable "create_namespace" {
 variable "chart_version" {
   type        = string
   description = "Chart version to be deployed."
-  default     = "1.0.8"
+  default     = "1.0.9"
 }
 
 variable "chart_repository" {
