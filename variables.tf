@@ -31,7 +31,7 @@ variable "chart" {
 variable "chart_namespace" {
   type        = string
   description = "Chart namespace to install the release into."
-  default     = "spot-system"
+  default     = "kube-system"
 }
 
 variable "secret_name" {
