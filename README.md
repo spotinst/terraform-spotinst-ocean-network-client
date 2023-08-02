@@ -60,9 +60,10 @@ No modules.
 |------|-------------|------|----------------------------|:--------:|
 | <a name="input_chart"></a> [chart](#input\_chart) | Chart name to be deployed. | `string` | `"ocean-network-client"`   | no |
 | <a name="input_chart_repository"></a> [chart\_repository](#input\_chart\_repository) | Repository URL where to locate the Spot Ocean Network Client chart. | `string` | `"https://charts.spot.io"` | no |
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Chart version to be deployed. | `string` | `"1.0.10"`                 | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Chart version to be deployed. | `string` | `"1.0.11"`                 | no |
 | <a name="input_config_map_name"></a> [config\_map\_name](#input\_config\_map\_name) | ConfigMap name. | `string` | `null`                     | no |
 | <a name="input_image_pull_policy"></a> [image\_pull\_policy](#input\_image\_pull\_policy) | Image pull policy. | `string` | `null`                     | no |
+| <a name="input_image_pull_secrets"></a> [image\_pull\_secrets](#input\_image\_pull\_secrets) | Image pull secrets. | `string` | `null`                     | no |
 | <a name="input_image_repository"></a> [image\_repository](#input\_image\_repository) | Image repository. | `string` | `null`                     | no |
 | <a name="input_image_tag"></a> [image\_tag](#input\_image\_tag) | Image tag. | `string` | `null`                     | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Kubernetes namespace where the components should be installed. | `string` | `null`                     | no |

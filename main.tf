@@ -53,4 +53,12 @@ resource "helm_release" "this" {
       value = var.image_pull_policy
     }
   }
+
+  dynamic "set" {
+    for_each = var.image_pull_secrets != null ? ["image_pull_secrets"] : []
+    content {
+      name  = "image.pullSecrets"
+      value = var.image_pull_secrets
+    }
+  }
 }
