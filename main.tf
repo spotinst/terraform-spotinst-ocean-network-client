@@ -54,11 +54,11 @@ resource "helm_release" "this" {
     }
   }
 
-    dynamic "set" {
-      for_each = var.image_pull_secrets != null ? ["image_pull_secrets "] : []
-      content {
-        name  = "image.pullSecrets "
-        value = var.image_pull_secrets
-      }
+  dynamic "set" {
+    for_each = var.image_pull_secrets != null ? ["image_pull_secrets "] : []
+    content {
+      name  = "image.pullSecrets "
+      value = var.image_pull_secrets
     }
+  }
 }
