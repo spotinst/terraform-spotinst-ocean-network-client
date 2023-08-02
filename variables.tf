@@ -69,3 +69,9 @@ variable "image_pull_policy" {
   description = "Image pull policy."
   default     = "Always"
 }
+
+variable "image_pull_secrets" {
+  type        = string
+  description = "Image pull secrets."
+  default     = null
+}
