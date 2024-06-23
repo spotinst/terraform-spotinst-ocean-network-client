@@ -7,6 +7,30 @@ resource "helm_release" "this" {
   namespace        = var.chart_namespace
 
   dynamic "set" {
+    for_each = var.token != null ? ["token"] : []
+    content {
+      name  = "token"
+      value = var.token
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.account_id != null ? ["account_id"] : []
+    content {
+      name  = "account_id"
+      value = var.account_id
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.cluster_identifier != null ? ["cluster_identifier"] : []
+    content {
+      name  = "cluster_identifier"
+      value = var.cluster_identifier
+    }
+  }
+
+  dynamic "set" {
     for_each = var.namespace != null ? ["namespace"] : []
     content {
       name  = "namespace"

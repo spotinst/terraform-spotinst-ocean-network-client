@@ -34,6 +34,24 @@ variable "chart_namespace" {
   default     = "kube-system"
 }
 
+variable "token" {
+  type        = string
+  description = "Spotinst token."
+  default     = null
+}
+
+variable "account_id" {
+  type        = string
+  description = "Spotinst Account Id"
+  default     = null
+}
+
+variable "cluster_identifier" {
+  type        = string
+  description = "Spotinst Cluster Identifier."
+  default     = null
+}
+
 variable "secret_name" {
   type        = string
   description = "Secret name."
