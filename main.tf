@@ -40,7 +40,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.ocean_controller_config_map_name != null ? ["ocean_controller_config_map_name"] : []
     content {
-      name  = "oceanController.configMapNamespace"
+      name  = "oceanController.configMapName"
       value = var.ocean_controller_config_map_name
     }
   }
