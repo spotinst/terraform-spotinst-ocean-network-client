@@ -40,6 +40,13 @@ variable "secret_name" {
   default     = null
 }
 
+// Used for backward compatibility with the previous version of the module
+variable "ocean_controller_secret_name" {
+  type        = string
+  description = "Ocean controller Secret name."
+  default     = null
+}
+
 variable "namespace" {
   type        = string
   description = "Kubernetes namespace where the components should be installed."
@@ -49,6 +56,13 @@ variable "namespace" {
 variable "config_map_name" {
   type        = string
   description = "ConfigMap name."
+  default     = null
+}
+
+// Used for backward compatibility with the previous version of the module
+variable "ocean_controller_config_map_name" {
+  type        = string
+  description = "Ocean controller ConfigMap name."
   default     = null
 }
 
