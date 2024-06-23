@@ -22,12 +22,13 @@ resource "helm_release" "this" {
     }
   }
 
- dynamic "set" {
-   for_each = var.ocean_controller_secret_name != null ? ["ocean_controller_secret_name"] : []
+  dynamic "set" {
+    for_each = var.ocean_controller_secret_name != null ? ["ocean_controller_secret_name"] : []
     content {
-      name  = "oceanController.secretName"
-      value = var.ocean_controller_secret_name
+       name  = "oceanController.secretName"
+       value = var.ocean_controller_secret_name
     }
+  }
 
   dynamic "set" {
     for_each = var.config_map_name != null ? ["config_map_name"] : []
