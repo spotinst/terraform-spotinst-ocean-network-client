@@ -9,7 +9,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.token != null ? ["token"] : []
     content {
-      name  = "token"
+      name  = "spotinst.token"
       value = var.token
     }
   }
@@ -17,7 +17,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.account_id != null ? ["account_id"] : []
     content {
-      name  = "account_id"
+      name  = "spotinst.account"
       value = var.account_id
     }
   }
@@ -25,7 +25,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.cluster_identifier != null ? ["cluster_identifier"] : []
     content {
-      name  = "cluster_identifier"
+      name  = "spotinst.clusterIdentifier"
       value = var.cluster_identifier
     }
   }
