@@ -54,14 +54,7 @@ variable "cluster_identifier" {
 
 variable "secret_name" {
   type        = string
-  description = "Secret name."
-  default     = null
-}
-
-// Used for backward compatibility with the previous version of the module
-variable "ocean_controller_secret_name" {
-  type        = string
-  description = "Ocean controller Secret name."
+  description = "Secret name. If token and account_id aren't null, will create a new secret with this name"
   default     = null
 }
 
@@ -73,14 +66,7 @@ variable "namespace" {
 
 variable "config_map_name" {
   type        = string
-  description = "ConfigMap name."
-  default     = null
-}
-
-// Used for backward compatibility with the previous version of the module
-variable "ocean_controller_config_map_name" {
-  type        = string
-  description = "Ocean controller ConfigMap name."
+  description = "ConfigMap name. If cluster_identifier isn't null, will create a new config map with this name"
   default     = null
 }
 
