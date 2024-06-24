@@ -13,7 +13,7 @@ variable "create_namespace" {
 variable "chart_version" {
   type        = string
   description = "Chart version to be deployed."
-  default     = "1.0.16"
+  default     = "1.1.0"
 }
 
 variable "chart_repository" {
@@ -34,9 +34,27 @@ variable "chart_namespace" {
   default     = "kube-system"
 }
 
+variable "token" {
+  type        = string
+  description = "Spotinst token."
+  default     = null
+}
+
+variable "account_id" {
+  type        = string
+  description = "Spotinst Account Id"
+  default     = null
+}
+
+variable "cluster_identifier" {
+  type        = string
+  description = "Spotinst Cluster Identifier."
+  default     = null
+}
+
 variable "secret_name" {
   type        = string
-  description = "Secret name."
+  description = "Secret name. If token and account_id aren't null, will create a new secret with this name"
   default     = null
 }
 
@@ -48,7 +66,7 @@ variable "namespace" {
 
 variable "config_map_name" {
   type        = string
-  description = "ConfigMap name."
+  description = "ConfigMap name. If cluster_identifier isn't null, will create a new config map with this name"
   default     = null
 }
 

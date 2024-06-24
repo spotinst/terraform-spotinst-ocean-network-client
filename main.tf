@@ -7,9 +7,33 @@ resource "helm_release" "this" {
   namespace        = var.chart_namespace
 
   dynamic "set" {
+    for_each = var.token != null ? ["token"] : []
+    content {
+      name  = "spotinst.token"
+      value = var.token
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.account_id != null ? ["account_id"] : []
+    content {
+      name  = "spotinst.account"
+      value = var.account_id
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.cluster_identifier != null ? ["cluster_identifier"] : []
+    content {
+      name  = "spotinst.clusterIdentifier"
+      value = var.cluster_identifier
+    }
+  }
+
+  dynamic "set" {
     for_each = var.namespace != null ? ["namespace"] : []
     content {
-      name  = "oceanController.namespace"
+      name  = "namespace"
       value = var.namespace
     }
   }
@@ -17,7 +41,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.secret_name != null ? ["secret_name"] : []
     content {
-      name  = "oceanController.secretName"
+      name  = "secretName"
       value = var.secret_name
     }
   }
@@ -25,7 +49,7 @@ resource "helm_release" "this" {
   dynamic "set" {
     for_each = var.config_map_name != null ? ["config_map_name"] : []
     content {
-      name  = "oceanController.configMapName"
+      name  = "configMapName"
       value = var.config_map_name
     }
   }

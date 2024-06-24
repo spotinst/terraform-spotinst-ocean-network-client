@@ -7,6 +7,6 @@ provider "helm" {
 module "ocean-network-client" {
   source            = "../.."
   image_pull_policy = "Always"
-  image_tag         = "1.0.0"
+  image_tag         = "1.0.8"
 }
 
